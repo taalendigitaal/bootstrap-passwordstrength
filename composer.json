@@ -1,0 +1,19 @@
+{
+    "name": "taalendigitaal/bootstrap-passwordstrength",
+    "type": "component",
+    "require": {
+        "robloach/component-installer": "*",
+        "components/bootstrap" : ">=3.0, <4.0",
+        "components/jquery": ">=1.7.1"
+    },
+    "extra": {
+        "component": {
+            "scripts": [
+                "dist/pwstrength-bootstrap-1.0.2.js"
+            ],
+            "files": [
+                "dist/pwstrength-bootstrap-1.0.2.min.js"
+            ]
+        }
+    }
+}
