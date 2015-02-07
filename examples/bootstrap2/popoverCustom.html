@@ -14,6 +14,31 @@
                 Pass: <input type="password" id="password" />
             </fieldset>
         </form>
+        <div class="row">
+            <div class="span12">
+<pre>jQuery(document).ready(function () {
+    "use strict";
+    var options = {};
+    options.ui = {
+        showPopover: true,
+        showErrors: true,
+        bootstrap2: true,
+        popoverError: function (errors) {
+            "use strict";
+            var message = "&lt;div&gt;&lt;ul class='error-list' style='margin-bottom: 0;'&gt;";
+
+            /*jslint unparam: true*/
+            jQuery.each(errors, function (idx, err) {
+                message += "&lt;li&gt;" + err + "&lt;/li&gt;";
+            });
+            message += "&lt;/ul&gt;&lt;/div&gt;";
+            return message;
+        }
+    };
+    $(':password').pwstrength(options);
+});</pre>
+            </div>
+        </div>
         <p><a href="..">Go back</a></p>
     </div>
 

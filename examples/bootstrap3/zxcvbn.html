@@ -29,12 +29,37 @@
                 </div>
                 <div class="col-sm-6 col-sm-offset-2 my-help-text">
                     <span class="pwstrength_viewport_progress"></span> <span class="pwstrength_viewport_verdict"></span>
+                    <p>The content of the form inputs and the words <em>samurai, shogun, bushido, daisho</em> and <em>seppuku</em> are disrecommended in the password, and the score will adjust properly.</p>
                 </div>
             </div>
             <div class="row">
                 <div id="messages" class="col-sm-12"></div>
             </div>
         </form>
+        <div class="row">
+            <div class="col-sm-12">
+<pre>jQuery(document).ready(function () {
+    "use strict";
+    var options = {};
+    options.ui = {
+        container: "#pwd-container",
+        viewports: {
+            progress: ".pwstrength_viewport_progress",
+            verdict: ".pwstrength_viewport_verdict"
+        }
+    };
+    options.common = {
+        onLoad: function () {
+            $('#messages').text('Start typing password');
+        },
+        zxcvbn: true,
+        zxcvbnTerms: ['samurai', 'shogun', 'bushido', 'daisho', 'seppuku'],
+        userInputs: ['#year', '#familyname']
+    };
+    $(':password').pwstrength(options);
+});</pre>
+            </div>
+        </div>
         <p><a href="..">Go back</a></p>
     </div>
 
@@ -57,6 +82,7 @@
                     $('#messages').text('Start typing password');
                 },
                 zxcvbn: true,
+                zxcvbnTerms: ['samurai', 'shogun', 'bushido', 'daisho', 'seppuku'],
                 userInputs: ['#year', '#familyname']
             };
             $(':password').pwstrength(options);

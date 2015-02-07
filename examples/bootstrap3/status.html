@@ -18,6 +18,23 @@
                 </div>
             </div>
         </form>
+        <div class="row">
+            <div class="col-sm-12">
+<pre>jQuery(document).ready(function () {
+    "use strict";
+    var options = {};
+    options.ui = {
+        container: "#pwd-container",
+        showStatus: true,
+        showProgressBar: false,
+        viewports: {
+            verdict: ".pwstrength_viewport_verdict"
+        }
+    };
+    $(':password').pwstrength(options);
+});</pre>
+            </div>
+        </div>
         <p><a href="..">Go back</a></p>
     </div>
 

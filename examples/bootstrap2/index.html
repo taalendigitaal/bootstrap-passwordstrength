@@ -17,6 +17,24 @@
                 <div id="messages"></div>
             </fieldset>
         </form>
+        <div class="row">
+            <div class="span12">
+<pre>jQuery(document).ready(function () {
+    "use strict";
+    var options = {};
+    options.common = {
+        onLoad: function () {
+            $('#messages').text('Start typing password');
+        }
+    };
+    options.ui = {
+        bootstrap2: true,
+        showErrors: true
+    };
+    $(':password').pwstrength(options);
+});</pre>
+            </div>
+        </div>
         <p><a href="..">Go back</a></p>
     </div>
 
