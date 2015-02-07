@@ -20,6 +20,9 @@ defaultOptions.common.userInputs = [
 defaultOptions.common.onLoad = undefined;
 defaultOptions.common.onKeyUp = undefined;
 defaultOptions.common.zxcvbn = false;
+defaultOptions.common.zxcvbnTerms = [
+    // List of disrecommended words
+];
 defaultOptions.common.debug = false;
 
 defaultOptions.rules = {};

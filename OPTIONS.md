@@ -71,6 +71,13 @@ Let's see the options of each section.
   To use this option you must load the zxcvbn library file on your site. You'll
   find it at their [repository](https://github.com/lowe/zxcvbn).
 
+* __zxcvbnTerms__:
+
+  Default: `[]` (Array)
+
+  An array of strings. A list of banned words for the zxcvbn library. This
+  option will be ignored if zxcvbn is not being used.
+
 * __debug__:
 
   Default: `false` (Boolean)

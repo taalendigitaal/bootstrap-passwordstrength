@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.2.5
+
+- Bugfix when using zxcvbn and form inputs with empty values.
+- New option to specify a list of banned words for zxcvbn.
+
 ## 1.2.4
 
 - New option to add a class in verdict element.
