@@ -11,7 +11,7 @@ password.
 Dual licensed under the MIT and GPL licenses. You can choose the one that
 suits your purposes better.
 
-[jQuery plugins registry entry](http://plugins.jquery.com/pwstrength-bootstrap/)
+[npm entry](https://www.npmjs.com/package/pwstrength-bootstrap)
 
 
 ## Requirements
