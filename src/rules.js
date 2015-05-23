@@ -71,6 +71,7 @@ try {
             j;
         if (word.length > 2) {
             $.each(rulesEngine.forbiddenSequences, function (idx, seq) {
+                if (found) { return; }
                 var sequences = [seq, seq.split('').reverse().join('')];
                 $.each(sequences, function (idx, sequence) {
                     for (j = 0; j < (word.length - 2); j += 1) { // iterate the word trough a sliding window of size 3:

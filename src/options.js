@@ -31,7 +31,7 @@ defaultOptions.rules.scores = {
     wordNotEmail: -100,
     wordLength: -50,
     wordSimilarToUsername: -100,
-    wordSequences: -50,
+    wordSequences: -20,
     wordTwoCharacterClasses: 2,
     wordRepetitions: -25,
     wordLowercase: 1,
