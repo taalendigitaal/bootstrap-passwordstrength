@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.2.6
+
+- More sensible default score for sequences rule.
+- Publish plugin in npm.
+
 ## 1.2.5
 
 - Bugfix when using zxcvbn and form inputs with empty values.
