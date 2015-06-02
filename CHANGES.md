@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.2.7
+
+- Bugfix: escape special characters in username for regex.
+
 ## 1.2.6
 
 - More sensible default score for sequences rule.
