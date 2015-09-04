@@ -25,7 +25,7 @@
     },
     "dependencies": {
         "jquery": ">=1.7.0",
-        "bootstrap": ">=4.0.0"
+        "bootstrap": ">=4.0.0-alpha"
     },
     "devDependencies": {
         "grunt": "~0.4.4",
