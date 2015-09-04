@@ -44,7 +44,7 @@ var ui = {};
         $container = ui.getContainer(options, $el);
 
         result = {};
-        result.$progressbar = ui.findElement($container, options.ui.viewports.progress, "div.progress");
+        result.$progressbar = ui.findElement($container, options.ui.viewports.progress, "progress.progress");
         if (options.ui.showVerdictsInsideProgressBar) {
             result.$verdict = result.$progressbar.find("span.password-verdict");
         }
@@ -62,7 +62,7 @@ var ui = {};
 
     ui.initProgressBar = function (options, $el) {
         var $container = ui.getContainer(options, $el),
-            progressbar = "<div class='progress'><div class='";
+            progressbar = "<progress class='progress' value='0' max='100'><div class='progress'><div class='";
 
         if (!options.ui.bootstrap2) {
             progressbar += "progress-";
@@ -71,7 +71,7 @@ var ui = {};
         if (options.ui.showVerdictsInsideProgressBar) {
             progressbar += "<span class='password-verdict'></span>";
         }
-        progressbar += "</div></div>";
+        progressbar += "</div></div></progress>";
 
         if (options.ui.viewports.progress) {
             $container.find(options.ui.viewports.progress).append(progressbar);
@@ -139,6 +139,7 @@ var ui = {};
             $bar.removeClass(cssPrefix + "bar-" + value);
         });
         $bar.addClass(cssPrefix + "bar-" + barClasses[cssClass]);
+        $progressbar.val(percentage);
         $bar.css("width", percentage + '%');
     };
 

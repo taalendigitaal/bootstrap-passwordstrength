@@ -1,15 +1,15 @@
 {
     "name": "pwstrength-bootstrap",
-    "version": "1.2.7",
+    "version": "1.2.8",
     "homepage": "https://github.com/ablanco/jquery.pwstrength.bootstrap",
     "authors": [
         "Alejandro Blanco <alejandro.b.e@gmail.com>"
     ],
     "description": "jQuery plugin for Twitter Bootstrap that provides rulesets for visualy displaying the quality of a users typed in password.",
-    "main": "dist/pwstrength-bootstrap-1.2.7.js",
+    "main": "dist/pwstrength-bootstrap-1.2.8.js",
     "dependencies": {
         "jquery": ">=1.7.0",
-        "bootstrap": ">=2.0.0"
+        "bootstrap": ">=4.0.0"
     },
     "moduleType": [
         "globals"

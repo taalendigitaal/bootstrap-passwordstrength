@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.2.8
+
+- Updated to work with Bootstrap 4.
+
 ## 1.2.7
 
 - Bugfix: escape special characters in username for regex.
