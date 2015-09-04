@@ -399,9 +399,11 @@ var ui = {};
         }
 
         $.each(ui.possibleProgressBarClasses, function (idx, value) {
-            $bar.removeClass(cssPrefix + "bar-" + value);
+            $progressbar.removeClass(cssPrefix + value);
+            $bar.removeClass(cssPrefix + value);
         });
-        $bar.addClass(cssPrefix + "bar-" + barClasses[cssClass]);
+        $progressbar.addClass(cssPrefix + barClasses[cssClass]);
+        $bar.addClass(cssPrefix + barClasses[cssClass]);
         $progressbar.val(percentage);
         $bar.css("width", percentage + '%');
     };
