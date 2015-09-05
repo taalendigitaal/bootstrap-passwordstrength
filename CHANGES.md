@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 1.2.8
+## 1.2.8dev
 
 - Updated to work with Bootstrap 4.
 

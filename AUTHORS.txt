@@ -16,3 +16,4 @@ saparicio <https://github.com/saparicio>
 Javier Holguera <jholguerablanco@hotmail.com>
 Rômulo Alves <romulo@romuloalves.com.br>
 Hannah "hpinkos" <https://github.com/hpinkos>
+Mike Stecker <https://github.com/mikestecker>
