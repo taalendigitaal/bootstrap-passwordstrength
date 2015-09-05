@@ -163,6 +163,13 @@ Let's see the options of each section.
   Sets if it supports legacy Bootstrap 2 (true) or the current Bootstrap 3
   (false), the progress bar html is different.
 
+* __bootstrap4__:
+
+  Default: `false` (Boolean)
+
+  Sets if it supports unstable Bootstrap 4 (true) or the current Bootstrap 3
+  (false), the progress bar html is different.
+
 * __showProgressBar__:
 
   Default: `true` (Boolean)

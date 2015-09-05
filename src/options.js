@@ -65,6 +65,7 @@ defaultOptions.rules.raisePower = 1.4;
 
 defaultOptions.ui = {};
 defaultOptions.ui.bootstrap2 = false;
+defaultOptions.ui.bootstrap4 = false;
 defaultOptions.ui.showProgressBar = true;
 defaultOptions.ui.showPopover = false;
 defaultOptions.ui.showStatus = false;
