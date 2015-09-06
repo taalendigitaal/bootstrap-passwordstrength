@@ -2,7 +2,8 @@
 
 ## 1.2.8dev
 
-- Updated to work with Bootstrap 4.
+- Updated to work with Bootstrap 4. Bootstrap 3 is still the default mode.
+- Allow to establish the placement of the popover through an option.
 
 ## 1.2.7
 

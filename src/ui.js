@@ -117,7 +117,7 @@ var ui = {};
         $el.popover("destroy");
         $el.popover({
             html: true,
-            placement: "bottom",
+            placement: options.ui.popoverPlacement,
             trigger: "manual",
             content: " "
         });

@@ -188,6 +188,13 @@ Let's see the options of each section.
   If the `showVerdictsInsideProgressBar` option is active, then the verdicts
   won't appear on the popover.
 
+* __popoverPlacement__:
+
+  Default: `"bottom"` (String)
+
+  Choose where the popover should be placed in relation with the input field.
+  The possible options are: `"top"` `"bottom"` `"left"` `"right"` `"auto"`
+
 * __showStatus__:
 
   Default: `false` (Boolean)

@@ -230,6 +230,7 @@ defaultOptions.ui.bootstrap2 = false;
 defaultOptions.ui.bootstrap4 = false;
 defaultOptions.ui.showProgressBar = true;
 defaultOptions.ui.showPopover = false;
+defaultOptions.ui.popoverPlacement = "bottom";
 defaultOptions.ui.showStatus = false;
 defaultOptions.ui.spanError = function (options, key) {
     "use strict";
@@ -381,7 +382,7 @@ var ui = {};
         $el.popover("destroy");
         $el.popover({
             html: true,
-            placement: "bottom",
+            placement: options.ui.popoverPlacement,
             trigger: "manual",
             content: " "
         });
