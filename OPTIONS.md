@@ -168,7 +168,8 @@ Let's see the options of each section.
   Default: `false` (Boolean)
 
   Sets if it supports unstable Bootstrap 4 (true) or the current Bootstrap 3
-  (false), the progress bar html is different.
+  (false), the progress bar html is different. Keep in mind that the current
+  Boostrap 4 support is very basic.
 
 * __showProgressBar__:
 
@@ -265,6 +266,8 @@ Let's see the options of each section.
   this setting is active, the verdict viewport is ignored and they won't appear
   on the popover if it is being showed. Also this option overrides the value of
   the _showVerdicts_ one.
+
+  This option is not available when using Bootstrap 4.
 
 * __useVerdictCssClass__:
 
