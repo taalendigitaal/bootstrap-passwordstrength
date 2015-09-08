@@ -228,6 +228,7 @@ defaultOptions.rules.raisePower = 1.4;
 defaultOptions.ui = {};
 defaultOptions.ui.bootstrap2 = false;
 defaultOptions.ui.bootstrap4 = false;
+defaultOptions.ui.colorClasses = ["danger", "warning", "success"];
 defaultOptions.ui.showProgressBar = true;
 defaultOptions.ui.showPopover = false;
 defaultOptions.ui.popoverPlacement = "bottom";
@@ -279,8 +280,7 @@ var ui = {};
 (function ($, ui) {
     "use strict";
 
-    var barClasses = ["danger", "warning", "success"],
-        statusClasses = ["error", "warning", "success"];
+    var statusClasses = ["error", "warning", "success"];
 
     ui.getContainer = function (options, $el) {
         var $container;
@@ -402,8 +402,6 @@ var ui = {};
         }
     };
 
-    ui.possibleProgressBarClasses = ["danger", "warning", "success"];
-
     ui.updateProgressBar = function (options, $el, cssClass, percentage) {
         var $progressbar = ui.getUIElements(options, $el).$progressbar,
             $bar = $progressbar.find(".progress-bar"),
@@ -414,7 +412,7 @@ var ui = {};
             cssPrefix = "";
         }
 
-        $.each(ui.possibleProgressBarClasses, function (idx, value) {
+        $.each(options.ui.colorClasses, function (idx, value) {
             if (options.ui.bootstrap4) {
                 $progressbar.removeClass(cssPrefix + value);
             } else {
@@ -422,19 +420,19 @@ var ui = {};
             }
         });
         if (options.ui.bootstrap4) {
-            $progressbar.addClass(cssPrefix + barClasses[cssClass]);
+            $progressbar.addClass(cssPrefix + options.ui.colorClasses[cssClass]);
             $progressbar.val(percentage);
         } else {
-            $bar.addClass(cssPrefix + "bar-" + barClasses[cssClass]);
+            $bar.addClass(cssPrefix + "bar-" + options.ui.colorClasses[cssClass]);
             $bar.css("width", percentage + '%');
         }
     };
 
     ui.updateVerdict = function (options, $el, cssClass, text) {
         var $verdict = ui.getUIElements(options, $el).$verdict;
-        $verdict.removeClass(barClasses.join(' '));
+        $verdict.removeClass(options.ui.colorClasses.join(' '));
         if (cssClass > -1) {
-            $verdict.addClass(barClasses[cssClass]);
+            $verdict.addClass(options.ui.colorClasses[cssClass]);
         }
         $verdict.html(text);
     };

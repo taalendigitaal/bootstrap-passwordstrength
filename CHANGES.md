@@ -4,6 +4,7 @@
 
 - Updated to work with Bootstrap 4. Bootstrap 3 is still the default mode.
 - Allow to establish the placement of the popover through an option.
+- Make the css classes added to the bar and verdicts customizable.
 
 ## 1.2.7
 

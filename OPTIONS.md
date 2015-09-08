@@ -171,6 +171,18 @@ Let's see the options of each section.
   (false), the progress bar html is different. Keep in mind that the current
   Boostrap 4 support is very basic.
 
+* __colorClasses__:
+
+  Default: `["danger", "warning", "success"]` (Array)
+
+  The css classes applied to the bar in the progress bar and to the verdicts,
+  depending on the strength of the password.
+
+  Keep in mind that for Boostrap 2 a `bar-` prefix will be added, that for
+  Boostrap 3 the prefix will be `progress-bar-`, and that for Bootstrap 4 it
+  will be `progress-`. This is the case for the progress bar, not the verdicts.
+  For the verdicts there is no prefix whatsoever.
+
 * __showProgressBar__:
 
   Default: `true` (Boolean)
