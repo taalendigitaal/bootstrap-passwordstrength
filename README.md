@@ -32,7 +32,12 @@ Forks to use it with another frameworks that I know of:
 
 ## How to use it
 
-Just invoke the plugin on the password fields you want to attach a strength
+Download the latest minified version and load it into your HTML after your original bootstrap and jQuery javascript files:
+```html
+<script type="text/javascript" src="file/location/pwstrength-bootstrap-1.2.7.min.js"></script>
+```
+
+Then ust invoke the plugin on the password fields you want to attach a strength
 meter to. For example, to use it on all the password fields with the default
 examples:
 
