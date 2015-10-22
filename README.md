@@ -37,7 +37,7 @@ Download the latest minified version and load it into your HTML after your origi
 <script type="text/javascript" src="file/location/pwstrength-bootstrap-1.2.7.min.js"></script>
 ```
 
-Then ust invoke the plugin on the password fields you want to attach a strength
+Then just invoke the plugin on the password fields you want to attach a strength
 meter to. For example, to use it on all the password fields with the default
 examples:
 
