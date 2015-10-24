@@ -32,9 +32,13 @@ Forks to use it with another frameworks that I know of:
 
 ## How to use it
 
-Download the latest minified version and load it into your HTML after your original bootstrap and jQuery javascript files:
+Get the latest version through [Bower](http://bower.io/search/?q=pwstrength-bootstrap),
+[npm](https://www.npmjs.com/package/pwstrength-bootstrap), or just download it
+from this [repository](https://github.com/ablanco/jquery.pwstrength.bootstrap/tree/master/dist).
+Load it into your HTML after your original bootstrap and jQuery javascript files:
+
 ```html
-<script type="text/javascript" src="file/location/pwstrength-bootstrap-1.2.7.min.js"></script>
+<script type="text/javascript" src="file/location/pwstrength-bootstrap-1.2.8.min.js"></script>
 ```
 
 Then just invoke the plugin on the password fields you want to attach a strength
