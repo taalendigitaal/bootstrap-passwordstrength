@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.2.9
+
+- No changes, I forgot to add the built files into the 1.2.8, so I'm releasing
+  the same again.
+
 ## 1.2.8
 
 - Updated to work with Bootstrap 4. Bootstrap 3 is still the default mode.
