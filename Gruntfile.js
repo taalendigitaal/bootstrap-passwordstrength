@@ -75,6 +75,9 @@ module.exports = function (grunt) {
             copyFile: {
                 command: 'cp <%= concat.dist.dest %> examples/pwstrength.js'
             },
+            copyZxcvbn: {
+                command: 'cp bower_components/zxcvbn/dist/zxcvbn.js examples/zxcvbn.js'
+            },
             makeDir: {
                 command: 'mkdir -p dist'
             },

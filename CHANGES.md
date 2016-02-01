@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.2.10
+
+- Replace entropy call with log2 of guesses for zxcvbn because entropy property
+  is removed in zxcvbn v4.0.1, and it was just log2 of guesses.
+
 ## 1.2.9
 
 - No changes, I forgot to add the built files into the 1.2.8, so I'm releasing
