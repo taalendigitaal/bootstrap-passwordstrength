@@ -221,6 +221,7 @@ Let's see the options of each section.
   ```javascript
   function (options, key) {
     var text = options.ui.errorMessages[key];
+    if (!text) { return ''; }
     return '<span style="color: #d52929">' + text + '</span>';
   };
   ```
@@ -322,7 +323,7 @@ Let's see the options of each section.
 
   An object containing the viewports to use to show the elements of the
   strength meter. Each one can be a CSS selector (`"#progressbar"`) or a DOM
-  node reference.
+  node reference. They must be contained by the `container`.
 
 * __scores__:
 
