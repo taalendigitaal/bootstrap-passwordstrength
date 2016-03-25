@@ -173,7 +173,7 @@ Let's see the options of each section.
 
 * __colorClasses__:
 
-  Default: `["danger", "warning", "success"]` (Array)
+  Default: `["danger", "danger", "danger", "warning", "warning", "success"]` (Array)
 
   The css classes applied to the bar in the progress bar and to the verdicts,
   depending on the strength of the password.
@@ -266,11 +266,11 @@ Let's see the options of each section.
 
 * __verdicts__:
 
-  Default: `["Weak", "Normal", "Medium", "Strong", "Very Strong"]` (Array)
+  Default: `["Very Weak", "Weak", "Normal", "Medium", "Strong", "Very Strong"]` (Array)
 
-  The display names for the verdicts related to the progressClass. It has to
-  have 5 elements, because there are 5 possible strength categories. It can be
-  html code.
+  The display names for the verdicts related to the colorClasses. It has to
+  have 6 elements, because there are 6 possible strength categories. It can
+  also be html code instead of text.
 
 * __showVerdicts__:
 
@@ -327,10 +327,10 @@ Let's see the options of each section.
 
 * __scores__:
 
-  Default: `[17, 26, 40, 50]` (Array)
+  Default: `[0, 14, 26, 38, 50]` (Array)
 
-  The scores used to determine what progressClass and verdicts to display. It
-  has to have 4 elements, which creates 5 categories of strength (the 5
+  The scores used to determine what colorClasses and verdicts to display. It
+  has to have 5 elements, which creates 6 categories of strength (the 6
   possible verdicts).
 
 ### Example of an options object

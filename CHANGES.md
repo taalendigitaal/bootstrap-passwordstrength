@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.3.0 dev
+
+- Use six possible verdicts and six possible css classes, so they match one
+  to one making it possible to configure each class for each verdict level.
+
 ## 1.2.10
 
 - Replace entropy call with log2 of guesses for zxcvbn because entropy property

@@ -237,35 +237,23 @@ var ui = {};
     };
 
     ui.getVerdictAndCssClass = function (options, score) {
-        var cssClass, verdictText, level;
+        var level;
 
-        if (score <= 0) {
-            cssClass = 0;
-            level = -1;
-            verdictText = options.ui.verdicts[0];
-        } else if (score < options.ui.scores[0]) {
-            cssClass = 0;
+        if (score <= options.ui.scores[0]) {
             level = 0;
-            verdictText = options.ui.verdicts[0];
         } else if (score < options.ui.scores[1]) {
-            cssClass = 0;
             level = 1;
-            verdictText = options.ui.verdicts[1];
         } else if (score < options.ui.scores[2]) {
-            cssClass = 1;
             level = 2;
-            verdictText = options.ui.verdicts[2];
         } else if (score < options.ui.scores[3]) {
-            cssClass = 1;
             level = 3;
-            verdictText = options.ui.verdicts[3];
-        } else {
-            cssClass = 2;
+        } else if (score < options.ui.scores[4]) {
             level = 4;
-            verdictText = options.ui.verdicts[4];
+        } else {
+            level = 5;
         }
 
-        return [verdictText, cssClass, level];
+        return [options.ui.verdicts[level], level];
     };
 
     ui.updateUI = function (options, $el, score) {
@@ -277,7 +265,7 @@ var ui = {};
         verdictCssClass = options.ui.useVerdictCssClass ? cssClass : -1;
 
         if (options.ui.showProgressBar) {
-            barPercentage = ui.percentage(score, options.ui.scores[3]);
+            barPercentage = ui.percentage(score, options.ui.scores[4]);
             ui.updateProgressBar(options, $el, cssClass, barPercentage);
             if (options.ui.showVerdictsInsideProgressBar) {
                 ui.updateVerdict(options, $el, verdictCssClass, verdictText);

@@ -66,7 +66,9 @@ defaultOptions.rules.raisePower = 1.4;
 defaultOptions.ui = {};
 defaultOptions.ui.bootstrap2 = false;
 defaultOptions.ui.bootstrap4 = false;
-defaultOptions.ui.colorClasses = ["danger", "warning", "success"];
+defaultOptions.ui.colorClasses = [
+    "danger", "danger", "danger", "warning", "warning", "success"
+];
 defaultOptions.ui.showProgressBar = true;
 defaultOptions.ui.showPopover = false;
 defaultOptions.ui.popoverPlacement = "bottom";
@@ -95,7 +97,9 @@ defaultOptions.ui.errorMessages = {
     wordRepetitions: "Too many repetitions",
     wordSequences: "Your password contains sequences"
 };
-defaultOptions.ui.verdicts = ["Weak", "Normal", "Medium", "Strong", "Very Strong"];
+defaultOptions.ui.verdicts = [
+    "Very Weak", "Weak", "Normal", "Medium", "Strong", "Very Strong"
+];
 defaultOptions.ui.showVerdicts = true;
 defaultOptions.ui.showVerdictsInsideProgressBar = false;
 defaultOptions.ui.useVerdictCssClass = false;
@@ -106,4 +110,4 @@ defaultOptions.ui.viewports = {
     verdict: undefined,
     errors: undefined
 };
-defaultOptions.ui.scores = [14, 26, 38, 50];
+defaultOptions.ui.scores = [0, 14, 26, 38, 50];
