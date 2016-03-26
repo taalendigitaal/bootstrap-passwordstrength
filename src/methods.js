@@ -13,7 +13,7 @@ var methods = {};
 
 (function ($, methods) {
     "use strict";
-    var onKeyUp, applyToAll;
+    var onKeyUp, onPaste, applyToAll;
 
     onKeyUp = function (event) {
         var $el = $(event.target),
@@ -58,6 +58,29 @@ var methods = {};
         }
     };
 
+    onPaste = function (event) {
+        // This handler is necessary because the paste event fires before the
+        // content is actually in the input, so we cannot read its value right
+        // away. Therefore, the timeouts.
+        var $el = $(event.target),
+            word = $el.val(),
+            tries = 0,
+            callback;
+
+        callback = function () {
+            var newWord =  $el.val();
+
+            if (newWord !== word) {
+                onKeyUp(event);
+            } else if (tries < 3) {
+                tries += 1;
+                setTimeout(callback, 100);
+            }
+        };
+
+        setTimeout(callback, 100);
+    };
+
     methods.init = function (settings) {
         this.each(function (idx, el) {
             // Make it deep extend (first param) so it extends too the
@@ -70,7 +93,7 @@ var methods = {};
             $el.data("pwstrength-bootstrap", localOptions);
             $el.on("keyup", onKeyUp);
             $el.on("change", onKeyUp);
-            $el.on("paste", onKeyUp);
+            $el.on("paste", onPaste);
 
             ui.initUI(localOptions, $el);
             if ($.trim($el.val())) { // Not empty, calculate the strength

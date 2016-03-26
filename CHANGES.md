@@ -4,6 +4,8 @@
 
 - Use six possible verdicts and six possible css classes, so they match one
   to one making it possible to configure each class for each verdict level.
+- Properly manage the paste event so the meter updates when the user pastes the
+  password.
 
 ## 1.2.10
 
