@@ -301,6 +301,12 @@ Let's see the options of each section.
 
   Determines if the error list is displayed with the progress bar or not.
 
+* __showScore__:
+
+  Default: `false` (Boolean)
+
+  Determines if the password score is displayed with the progress bar or not.
+
 * __container__:
 
   Default: `undefined` (CSS selector, or DOM node)
@@ -317,7 +323,8 @@ Let's see the options of each section.
   {
     progress: undefined,
     verdict: undefined,
-    errors: undefined
+    errors: undefined,
+    score: undefined
   }
   ```
 

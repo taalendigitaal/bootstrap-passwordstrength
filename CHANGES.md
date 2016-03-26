@@ -6,6 +6,7 @@
   to one making it possible to configure each class for each verdict level.
 - Properly manage the paste event so the meter updates when the user pastes the
   password.
+- Add a new option to display the password score.
 
 ## 1.2.10
 

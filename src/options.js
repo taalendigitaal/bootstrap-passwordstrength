@@ -104,10 +104,12 @@ defaultOptions.ui.showVerdicts = true;
 defaultOptions.ui.showVerdictsInsideProgressBar = false;
 defaultOptions.ui.useVerdictCssClass = false;
 defaultOptions.ui.showErrors = false;
+defaultOptions.ui.showScore = false;
 defaultOptions.ui.container = undefined;
 defaultOptions.ui.viewports = {
     progress: undefined,
     verdict: undefined,
-    errors: undefined
+    errors: undefined,
+    score: undefined
 };
 defaultOptions.ui.scores = [0, 14, 26, 38, 50];
