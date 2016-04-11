@@ -1,5 +1,5 @@
 /*jslint browser: true */
-/*global i18next */
+/*global */
 
 /*
 * jQuery Password Strength plugin for Twitter Bootstrap
@@ -43,4 +43,4 @@ var i18n = {};
 
         return result === key ? '' : result;
     };
-}(i18n, i18next));
+}(i18n, window.i18next));
