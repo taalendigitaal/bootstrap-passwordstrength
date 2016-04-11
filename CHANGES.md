@@ -9,6 +9,12 @@
 - Add a new option to display the password score.
 - Translations support, ahora hablamos idiomas.
 
+### Breaking changes
+
+- There are 6 verdicts and css classes now, instead of 5.
+- `verdicts` and `errorMessages` options have been removed. Now they rely on
+  the translations system.
+
 ## 1.2.10
 
 - Replace entropy call with log2 of guesses for zxcvbn because entropy property

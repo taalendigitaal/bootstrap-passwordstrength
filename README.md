@@ -182,7 +182,7 @@ The plugin provides a default implementation of the translation function, but
 you can override it using the option `i18n.t`.
 
 The default implementation will try to make use of the popular
-[i18next front-end translations tool](http://i18next.com/). If you happen to
+[i18next front-end translation tool](http://i18next.com/). If you happen to
 use it, then you only need to add the translations into your resources and
 load them. The plugin will automatically make use of it. You can find more
 details about and how to use it i18next in their website. There is also an
