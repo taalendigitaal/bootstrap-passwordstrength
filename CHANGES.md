@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 1.3.0 dev
+## 2.0.0 dev
 
 - Use six possible verdicts and six possible css classes, so they match one
   to one making it possible to configure each class for each verdict level.

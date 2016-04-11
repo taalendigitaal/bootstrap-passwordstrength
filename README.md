@@ -61,6 +61,9 @@ To apply it only to one input and change the options:
 
 Click here to find [the complete list of options for the plugin](OPTIONS.md).
 
+If you are looking for options to change or add new texts, please have a look
+at the internationalization section.
+
 
 ## Methods
 
@@ -168,6 +171,55 @@ $(document).ready(function () {
     $(':password').pwstrength(options);
 });
 ```
+
+
+## Internationalization (i18n)
+
+The plugin has support for internationalization. It also comes with some
+example translations, you can find them in the [locales folder](locales).
+
+The plugin provides a default implementation of the translation function, but
+you can override it using the option `i18n.t`.
+
+The default implementation will try to make use of the popular
+[i18next front-end translations tool](http://i18next.com/). If you happen to
+use it, then you only need to add the translations into your resources and
+load them. The plugin will automatically make use of it. You can find more
+details about and how to use it i18next in their website. There is also an
+example in the repository that uses that library.
+
+In case the i18next library is not available, then the default behavior is
+to return the english texts as a fallback.
+
+### What are the translatable texts?
+
+You can find the non-rules texts in any of the
+[provided translation example files](locales), and besides what you find there,
+every rule name is a valid key for the translation file. __You can use this to
+add new error messages (or remove them) for the engine rules__.
+
+### How to customize the translation function
+
+If you want to manage translations yourself or you don't use i18next you can
+override the default translation function like this:
+
+```javascript
+$(document).ready(function () {
+    var options = {};
+    options.i18n = {
+        t: function (key) {
+            var result = translateThisThing(key); // Do your magic here
+
+            return result === key ? '' : result; // This assumes you return the
+            // key if no translation was found, adapt as necessary
+        }
+    };
+    $(':password').pwstrength(options);
+});
+```
+
+You can find an example of some keys and translations in the
+[locales folder](locales).
 
 
 ## Examples

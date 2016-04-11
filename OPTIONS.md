@@ -220,7 +220,7 @@ Let's see the options of each section.
 
   ```javascript
   function (options, key) {
-    var text = options.ui.errorMessages[key];
+    var text = options.i18n.t(key);
     if (!text) { return ''; }
     return '<span style="color: #d52929">' + text + '</span>';
   };
@@ -235,8 +235,13 @@ Let's see the options of each section.
 
   ```javascript
   function (errors) {
-    var message = "<div>Errors:<ul class='error-list' style='margin-bottom: 0;'>";
-    jQuery.each(errors, function (idx, err) { message += "<li>" + err + "</li>"; });
+    var errors = options.instances.errors,
+        errorsTitle = options.i18n.t("errorList"),
+        message = "<div>" + errorsTitle + "<ul class='error-list' style='margin-bottom: 0;'>";
+
+    jQuery.each(errors, function (idx, err) {
+      message += "<li>" + err + "</li>";
+    });
     message += "</ul></div>";
     return message;
   };
@@ -244,33 +249,6 @@ Let's see the options of each section.
 
   Function to generate the errors list in the popover if `showPopover` is true.
   Overwrite for custom styling.
-
-* __errorMessages__:
-
-  Default: (Object)
-
-  ```
-  {
-    wordLength: "Your password is too short",
-    wordNotEmail: "Do not use your email as your password",
-    wordSimilarToUsername: "Your password cannot contain your username",
-    wordTwoCharacterClasses: "Use different character classes",
-    wordRepetitions: "Too many repetitions",
-    wordSequences: "Your password contains sequences"
-  }
-  ```
-
-  An object containing error messages. These can be overwritten for language
-  purposes, and extra messages can also be added for other rules, existing or
-  custom. Use the name of the rule as key.
-
-* __verdicts__:
-
-  Default: `["Very Weak", "Weak", "Normal", "Medium", "Strong", "Very Strong"]` (Array)
-
-  The display names for the verdicts related to the colorClasses. It has to
-  have 6 elements, because there are 6 possible strength categories. It can
-  also be html code instead of text.
 
 * __showVerdicts__:
 
