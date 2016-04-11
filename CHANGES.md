@@ -7,6 +7,7 @@
 - Properly manage the paste event so the meter updates when the user pastes the
   password.
 - Add a new option to display the password score.
+- Translations support, ahora hablamos idiomas.
 
 ## 1.2.10
 

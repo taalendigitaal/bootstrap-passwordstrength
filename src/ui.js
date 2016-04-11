@@ -14,7 +14,10 @@ var ui = {};
 (function ($, ui) {
     "use strict";
 
-    var statusClasses = ["error", "warning", "success"];
+    var statusClasses = ["error", "warning", "success"],
+        verdictKeys = [
+            "veryWeak", "weak", "normal", "medium", "strong", "veryStrong"
+        ];
 
     ui.getContainer = function (options, $el) {
         var $container;
@@ -211,7 +214,7 @@ var ui = {};
             if (options.instances.errors.length > 0) {
                 hide = false;
             }
-            html += options.ui.popoverError(options.instances.errors);
+            html += options.ui.popoverError(options);
         }
 
         if (hide) {
@@ -252,7 +255,7 @@ var ui = {};
     };
 
     ui.getVerdictAndCssClass = function (options, score) {
-        var level;
+        var level, verdict;
 
         if (score <= options.ui.scores[0]) {
             level = 0;
@@ -268,7 +271,9 @@ var ui = {};
             level = 5;
         }
 
-        return [options.ui.verdicts[level], level];
+        verdict = verdictKeys[level];
+
+        return [options.i18n.t(verdict), level];
     };
 
     ui.updateUI = function (options, $el, score) {

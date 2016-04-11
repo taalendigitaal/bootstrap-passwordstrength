@@ -1,5 +1,5 @@
 /*jslint browser: true, unparam: true */
-/*global jQuery */
+/*global jQuery, i18n */
 
 /*
 * jQuery Password Strength plugin for Twitter Bootstrap
@@ -75,13 +75,15 @@ defaultOptions.ui.popoverPlacement = "bottom";
 defaultOptions.ui.showStatus = false;
 defaultOptions.ui.spanError = function (options, key) {
     "use strict";
-    var text = options.ui.errorMessages[key];
+    var text = options.i18n.t(key);
     if (!text) { return ''; }
     return '<span style="color: #d52929">' + text + '</span>';
 };
-defaultOptions.ui.popoverError = function (errors) {
+defaultOptions.ui.popoverError = function (options) {
     "use strict";
-    var message = "<div>Errors:<ul class='error-list' style='margin-bottom: 0;'>";
+    var errors = options.instances.errors,
+        errorsTitle = options.i18n.t("errorList"),
+        message = "<div>" + errorsTitle + "<ul class='error-list' style='margin-bottom: 0;'>";
 
     jQuery.each(errors, function (idx, err) {
         message += "<li>" + err + "</li>";
@@ -89,17 +91,6 @@ defaultOptions.ui.popoverError = function (errors) {
     message += "</ul></div>";
     return message;
 };
-defaultOptions.ui.errorMessages = {
-    wordLength: "Your password is too short",
-    wordNotEmail: "Do not use your email as your password",
-    wordSimilarToUsername: "Your password cannot contain your username",
-    wordTwoCharacterClasses: "Use different character classes",
-    wordRepetitions: "Too many repetitions",
-    wordSequences: "Your password contains sequences"
-};
-defaultOptions.ui.verdicts = [
-    "Very Weak", "Weak", "Normal", "Medium", "Strong", "Very Strong"
-];
 defaultOptions.ui.showVerdicts = true;
 defaultOptions.ui.showVerdictsInsideProgressBar = false;
 defaultOptions.ui.useVerdictCssClass = false;
@@ -113,3 +104,6 @@ defaultOptions.ui.viewports = {
     score: undefined
 };
 defaultOptions.ui.scores = [0, 14, 26, 38, 50];
+
+defaultOptions.i18n = {};
+defaultOptions.i18n.t = i18n.t;

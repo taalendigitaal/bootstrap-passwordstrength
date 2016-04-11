@@ -51,8 +51,8 @@ module.exports = function (grunt) {
             },
             dist: {
                 src: [
-                    'src/rules.js', 'src/options.js', 'src/ui.js',
-                    'src/methods.js'
+                    'src/i18n.js', 'src/rules.js', 'src/options.js',
+                    'src/ui.js', 'src/methods.js'
                 ],
                 dest: '<%= pkg.name %>-<%= pkg.version %>.js'
             }
@@ -77,6 +77,9 @@ module.exports = function (grunt) {
             },
             copyZxcvbn: {
                 command: 'cp bower_components/zxcvbn/dist/zxcvbn.js examples/zxcvbn.js'
+            },
+            copyI18next: {
+                command: 'cp bower_components/i18next/i18next.min.js examples/i18next.js'
             },
             makeDir: {
                 command: 'mkdir -p dist'

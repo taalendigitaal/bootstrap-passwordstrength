@@ -10,7 +10,8 @@
   "dependencies": {
     "jquery": ">=1.7.0",
     "bootstrap": ">=2.0.0",
-    "zxcvbn": "^4.2.0"
+    "zxcvbn": "^4.2.0",
+    "i18next": "^2.4.0"
   },
   "moduleType": [
     "globals"
