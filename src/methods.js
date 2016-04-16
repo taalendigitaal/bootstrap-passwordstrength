@@ -83,7 +83,7 @@ var methods = {};
 
     methods.init = function (settings) {
         this.each(function (idx, el) {
-            // Make it deep extend (first param) so it extends too the
+            // Make it deep extend (first param) so it extends also the
             // rules and other inside objects
             var clonedDefaults = $.extend(true, {}, defaultOptions),
                 localOptions = $.extend(true, clonedDefaults, settings),
