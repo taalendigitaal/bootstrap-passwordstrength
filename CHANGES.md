@@ -8,8 +8,7 @@
   password.
 - Add a new option to display the password score.
 - Translations support, ahora hablamos idiomas.
-- Initialize progress bar at 1%, so the behavior is consistent when the field
-  is empty because the page has been loaded or the password has been deleted.
+- New option to set the minimum possible percentage filled in the progress bar.
 
 ### Breaking changes
 

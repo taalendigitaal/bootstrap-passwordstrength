@@ -133,6 +133,8 @@ var ui = {};
     };
 
     ui.initUI = function (options, $el) {
+        var barPercentage;
+
         if (options.ui.showPopover) {
             ui.initPopover(options, $el);
         } else {
@@ -148,7 +150,8 @@ var ui = {};
             ui.initScore(options, $el);
         }
 
-        ui.updateProgressBar(options, $el, 0, 1);
+        barPercentage = ui.percentage(options, 0, options.ui.scores[4]);
+        ui.updateProgressBar(options, $el, 0, barPercentage);
     };
 
     ui.updateProgressBar = function (options, $el, cssClass, percentage) {
@@ -249,9 +252,11 @@ var ui = {};
         $container.addClass(cssClass);
     };
 
-    ui.percentage = function (score, maximun) {
-        var result = Math.floor(100 * score / maximun);
-        result = result <= 0 ? 1 : result; // Don't show the progress bar empty
+    ui.percentage = function (options, score, maximun) {
+        var result = Math.floor(100 * score / maximun),
+            min = options.ui.progressBarMinPercentage;
+
+        result = result <= min ? min : result;
         result = result > 100 ? 100 : result;
         return result;
     };
@@ -287,7 +292,7 @@ var ui = {};
         verdictCssClass = options.ui.useVerdictCssClass ? cssClass : -1;
 
         if (options.ui.showProgressBar) {
-            barPercentage = ui.percentage(score, options.ui.scores[4]);
+            barPercentage = ui.percentage(options, score, options.ui.scores[4]);
             ui.updateProgressBar(options, $el, cssClass, barPercentage);
             if (options.ui.showVerdictsInsideProgressBar) {
                 ui.updateVerdict(options, $el, verdictCssClass, verdictText);
