@@ -147,6 +147,8 @@ var ui = {};
         if (options.ui.showScore) {
             ui.initScore(options, $el);
         }
+
+        ui.updateProgressBar(options, $el, 0, 1);
     };
 
     ui.updateProgressBar = function (options, $el, cssClass, percentage) {
