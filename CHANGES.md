@@ -8,7 +8,10 @@
   password.
 - Add a new option to display the password score.
 - Translations support, ahora hablamos idiomas.
-- New option to set the minimum possible percentage filled in the progress bar.
+- New option to set the minimum possible percentage filled in the progress bar
+  when the password field is not empty.
+- New option to set the minimum possible percentage filled in the progress bar
+  when the password field is empty.
 
 ### Breaking changes
 

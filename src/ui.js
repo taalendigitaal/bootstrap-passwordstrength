@@ -133,8 +133,6 @@ var ui = {};
     };
 
     ui.initUI = function (options, $el) {
-        var barPercentage;
-
         if (options.ui.showPopover) {
             ui.initPopover(options, $el);
         } else {
@@ -149,9 +147,6 @@ var ui = {};
         if (options.ui.showScore) {
             ui.initScore(options, $el);
         }
-
-        barPercentage = ui.percentage(options, 0, options.ui.scores[4]);
-        ui.updateProgressBar(options, $el, 0, barPercentage);
     };
 
     ui.updateProgressBar = function (options, $el, cssClass, percentage) {
@@ -189,21 +184,27 @@ var ui = {};
         $verdict.html(text);
     };
 
-    ui.updateErrors = function (options, $el) {
+    ui.updateErrors = function (options, $el, remove) {
         var $errors = ui.getUIElements(options, $el).$errors,
             html = "";
-        $.each(options.instances.errors, function (idx, err) {
-            html += "<li>" + err + "</li>";
-        });
+
+        if (!remove) {
+            $.each(options.instances.errors, function (idx, err) {
+                html += "<li>" + err + "</li>";
+            });
+        }
         $errors.html(html);
     };
 
-    ui.updateScore = function (options, $el, score) {
-        var $score = ui.getUIElements(options, $el).$score;
-        $score.html(score.toFixed(2));
+    ui.updateScore = function (options, $el, score, remove) {
+        var $score = ui.getUIElements(options, $el).$score,
+            html = "";
+
+        if (!remove) { html = score.toFixed(2); }
+        $score.html(html);
     };
 
-    ui.updatePopover = function (options, $el, verdictText) {
+    ui.updatePopover = function (options, $el, verdictText, remove) {
         var popover = $el.data("bs.popover"),
             html = "",
             hide = true;
@@ -222,7 +223,7 @@ var ui = {};
             html += options.ui.popoverError(options);
         }
 
-        if (hide) {
+        if (hide || remove) {
             $el.popover("hide");
             return;
         }
@@ -238,7 +239,7 @@ var ui = {};
         }
     };
 
-    ui.updateFieldStatus = function (options, $el, cssClass) {
+    ui.updateFieldStatus = function (options, $el, cssClass, remove) {
         var targetClass = options.ui.bootstrap2 ? ".control-group" : ".form-group",
             $container = $el.parents(targetClass).first();
 
@@ -246,6 +247,8 @@ var ui = {};
             if (!options.ui.bootstrap2) { css = "has-" + css; }
             $container.removeClass(css);
         });
+
+        if (remove) { return; }
 
         cssClass = statusClasses[cssClass];
         if (!options.ui.bootstrap2) { cssClass = "has-" + cssClass; }
@@ -263,6 +266,8 @@ var ui = {};
 
     ui.getVerdictAndCssClass = function (options, score) {
         var level, verdict;
+
+        if (score === undefined) { return ['', 0]; }
 
         if (score <= options.ui.scores[0]) {
             level = 0;
@@ -292,7 +297,11 @@ var ui = {};
         verdictCssClass = options.ui.useVerdictCssClass ? cssClass : -1;
 
         if (options.ui.showProgressBar) {
-            barPercentage = ui.percentage(options, score, options.ui.scores[4]);
+            if (score === undefined) {
+                barPercentage = options.ui.progressBarEmptyPercentage;
+            } else {
+                barPercentage = ui.percentage(options, score, options.ui.scores[4]);
+            }
             ui.updateProgressBar(options, $el, cssClass, barPercentage);
             if (options.ui.showVerdictsInsideProgressBar) {
                 ui.updateVerdict(options, $el, verdictCssClass, verdictText);
@@ -300,22 +309,22 @@ var ui = {};
         }
 
         if (options.ui.showStatus) {
-            ui.updateFieldStatus(options, $el, cssClass);
+            ui.updateFieldStatus(options, $el, cssClass, score === undefined);
         }
 
         if (options.ui.showPopover) {
-            ui.updatePopover(options, $el, verdictText);
+            ui.updatePopover(options, $el, verdictText, score === undefined);
         } else {
             if (options.ui.showVerdicts && !options.ui.showVerdictsInsideProgressBar) {
                 ui.updateVerdict(options, $el, verdictCssClass, verdictText);
             }
             if (options.ui.showErrors) {
-                ui.updateErrors(options, $el);
+                ui.updateErrors(options, $el, score === undefined);
             }
         }
 
         if (options.ui.showScore) {
-            ui.updateScore(options, $el, score);
+            ui.updateScore(options, $el, score, score === undefined);
         }
     };
 }(jQuery, ui));

@@ -189,12 +189,19 @@ Let's see the options of each section.
 
   Displays the password strength in a progress bar.
 
+* __progressBarEmptyPercentage__:
+
+  Default: `1` (Integer)
+
+  Minimum percentage filled in the progress bar that depicts the strength of
+  the password. An empty password will show the progress bar filled this much.
+
 * __progressBarMinPercentage__:
 
   Default: `1` (Integer)
 
   Minimum percentage filled in the progress bar that depicts the strength of
-  the password. An empty or a terrible password will show the progress bar
+  the password. A terrible but not empty password will show the progress bar
   filled this much.
 
 * __showPopover__:

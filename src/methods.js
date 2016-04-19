@@ -28,7 +28,7 @@ var methods = {};
 
         options.instances.errors = [];
         if (word.length === 0) {
-            score = 0;
+            score = undefined;
         } else {
             if (options.common.zxcvbn) {
                 userInputs = [];
@@ -96,9 +96,7 @@ var methods = {};
             $el.on("paste", onPaste);
 
             ui.initUI(localOptions, $el);
-            if ($.trim($el.val())) { // Not empty, calculate the strength
-                $el.trigger("keyup");
-            }
+            $el.trigger("keyup");
 
             if ($.isFunction(localOptions.common.onLoad)) {
                 localOptions.common.onLoad();
