@@ -12,6 +12,7 @@
   when the password field is not empty.
 - New option to set the minimum possible percentage filled in the progress bar
   when the password field is empty.
+- New option for extra CSS classes to be added to the generated progress bar.
 
 ### Breaking changes
 

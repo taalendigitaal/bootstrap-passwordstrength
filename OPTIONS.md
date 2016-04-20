@@ -204,6 +204,15 @@ Let's see the options of each section.
   the password. A terrible but not empty password will show the progress bar
   filled this much.
 
+* __progressBarExtraCssClasses__:
+
+  Default: `""` (String)
+
+  CSS classes to be added to the generated progress bar. It is meant to make
+  use of the extra classes provided by Bootstrap. The classes will be added to
+  the proper DOM element depending of which version of Bootstrap is being
+  used.
+
 * __showPopover__:
 
   Default: `false` (Boolean)
