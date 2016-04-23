@@ -7,6 +7,7 @@ module.exports = function (grunt) {
     var license =
         '/*!\n' +
         '* jQuery Password Strength plugin for Twitter Bootstrap\n' +
+        '* Version: <%= pkg.version %>\n' +
         '*\n' +
         '* Copyright (c) 2008-2013 Tane Piper\n' +
         '* Copyright (c) 2013 Alejandro Blanco\n' +
