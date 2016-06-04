@@ -44,7 +44,7 @@ var methods = {};
         }
         ui.updateUI(options, $el, score);
         verdictText = ui.getVerdictAndCssClass(options, score);
-        verdictLevel = verdictText[2];
+        verdictLevel = verdictText[1];
         verdictText = verdictText[0];
 
         if (options.common.debug) { console.log(score + ' - ' + verdictText); }
