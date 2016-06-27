@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2.0.1dev
+
+- Fix bad assignment in the plugin initialization.
+- Russian localization.
+- New option to control the events the plugin listen to.
+
 ## 2.0.0
 
 - Use six possible verdicts and six possible css classes, so they match one

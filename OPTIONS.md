@@ -78,6 +78,11 @@ Let's see the options of each section.
   An array of strings. A list of banned words for the zxcvbn library. This
   option will be ignored if zxcvbn is not being used.
 
+* __events__: `["keyup", "change", "paste"]` (Array)
+
+  An array of strings. A list of the event names the plugin is going to listen
+  to. Customize this option to deal with iOS 9 keyup bug.
+
 * __debug__:
 
   Default: `false` (Boolean)

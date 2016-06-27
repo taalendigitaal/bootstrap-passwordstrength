@@ -91,9 +91,11 @@ var methods = {};
 
             localOptions.instances = {};
             $el.data("pwstrength-bootstrap", localOptions);
-            $el.on("keyup", onKeyUp);
-            $el.on("change", onKeyUp);
-            $el.on("paste", onPaste);
+
+            $.each(localOptions.common.events, function (idx, eventName) {
+                var handler = eventName === "paste" ? onPaste : onKeyUp;
+                $el.on(eventName, handler);
+            });
 
             ui.initUI(localOptions, $el);
             $el.trigger("keyup");

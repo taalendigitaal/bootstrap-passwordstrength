@@ -23,6 +23,7 @@ defaultOptions.common.zxcvbn = false;
 defaultOptions.common.zxcvbnTerms = [
     // List of disrecommended words
 ];
+defaultOptions.common.events = ["keyup", "change", "paste"];
 defaultOptions.common.debug = false;
 
 defaultOptions.rules = {};
