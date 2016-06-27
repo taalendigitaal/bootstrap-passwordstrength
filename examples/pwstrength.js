@@ -1,6 +1,6 @@
 /*!
 * jQuery Password Strength plugin for Twitter Bootstrap
-* Version: 2.0.0
+* Version: 2.0.1
 *
 * Copyright (c) 2008-2013 Tane Piper
 * Copyright (c) 2013 Alejandro Blanco
@@ -227,6 +227,7 @@ defaultOptions.common.zxcvbn = false;
 defaultOptions.common.zxcvbnTerms = [
     // List of disrecommended words
 ];
+defaultOptions.common.events = ["keyup", "change", "paste"];
 defaultOptions.common.debug = false;
 
 defaultOptions.rules = {};
@@ -689,7 +690,7 @@ var methods = {};
         }
         ui.updateUI(options, $el, score);
         verdictText = ui.getVerdictAndCssClass(options, score);
-        verdictLevel = verdictText[2];
+        verdictLevel = verdictText[1];
         verdictText = verdictText[0];
 
         if (options.common.debug) { console.log(score + ' - ' + verdictText); }
@@ -736,9 +737,11 @@ var methods = {};
 
             localOptions.instances = {};
             $el.data("pwstrength-bootstrap", localOptions);
-            $el.on("keyup", onKeyUp);
-            $el.on("change", onKeyUp);
-            $el.on("paste", onPaste);
+
+            $.each(localOptions.common.events, function (idx, eventName) {
+                var handler = eventName === "paste" ? onPaste : onKeyUp;
+                $el.on(eventName, handler);
+            });
 
             ui.initUI(localOptions, $el);
             $el.trigger("keyup");

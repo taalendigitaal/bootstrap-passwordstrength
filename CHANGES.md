@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 2.0.1dev
+## 2.0.1
 
 - Fix bad assignment in the plugin initialization.
 - Russian localization.
