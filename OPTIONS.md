@@ -352,7 +352,7 @@ Let's see the options of each section.
 ```javascript
 var options = {};
 options.common = {
-    minChar: 8;
+    minChar: 8
 };
 options.rules = {
     activated: {
