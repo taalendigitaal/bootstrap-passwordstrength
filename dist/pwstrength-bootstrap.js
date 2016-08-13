@@ -198,6 +198,10 @@ try {
             }
         });
 
+        if ($.isFunction(options.common.scoreCalculated)) {
+            totalScore = options.common.scoreCalculated(options, word, totalScore);
+        }
+
         return totalScore;
     };
 }(jQuery, rulesEngine));
