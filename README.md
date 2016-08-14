@@ -133,7 +133,7 @@ That would avoid looking for sequences in the password being tested.
 
 ## Callback Functions
 
-The plugin provides two callback functions, onLoad and onKeyUp.  You can use
+The plugin provides three callback functions, onLoad, onKeyUp, and scoreCalculated.  You can use
 them like this:
 
 ```javascript
