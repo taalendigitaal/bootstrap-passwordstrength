@@ -153,8 +153,8 @@ try {
             }
         });
 
-        if ($.isFunction(options.common.scoreCalculated)) {
-            totalScore = options.common.scoreCalculated(options, word, totalScore);
+        if ($.isFunction(options.common.onScore)) {
+            totalScore = options.common.onScore(options, word, totalScore);
         }
 
         return totalScore;

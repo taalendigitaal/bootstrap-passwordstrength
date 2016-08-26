@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.2dev
+
+- Add a `onScore` callback to allow for a final score modification.
+
 ## 2.0.1
 
 - Fix bad assignment in the plugin initialization.
