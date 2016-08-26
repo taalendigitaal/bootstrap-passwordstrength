@@ -3,6 +3,7 @@
 ## 2.0.2
 
 - Add a `onScore` callback to allow for a final score modification.
+- Turkish localization.
 
 ## 2.0.1
 
