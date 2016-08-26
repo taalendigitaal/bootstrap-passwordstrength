@@ -13,8 +13,8 @@ var rulesEngine = {};
 
 try {
     if (!jQuery && module && module.exports) {
-        var jsdom = require("jsdom").jsdom;
-        jQuery = require("jquery");
+        var jQuery = require("jquery"),
+            jsdom = require("jsdom").jsdom;
         jQuery = jQuery(jsdom().parentWindow);
     }
 } catch (ignore) {}
