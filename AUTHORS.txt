@@ -26,3 +26,4 @@ Guilherme Pejon <https://github.com/guilpejon>
 bakcay <https://github.com/bakcay>
 Jason DiBianco <dibiancoj@gmail.com>
 Andreas B <https://github.com/andreasba>
+piernik <https://github.com/piernik>
