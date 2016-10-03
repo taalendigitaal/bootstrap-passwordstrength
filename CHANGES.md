@@ -3,6 +3,7 @@
 ## 2.0.3dev
 
 - German localization.
+- Polish localization.
 
 ## 2.0.2
 
