@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 2.0.3dev
+## 2.0.3
 
 - German localization.
 - Polish localization.
