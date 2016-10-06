@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.4dev
+
+- French localization.
+
 ## 2.0.3
 
 - German localization.
