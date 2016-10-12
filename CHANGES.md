@@ -3,6 +3,7 @@
 ## 2.0.4dev
 
 - French localization.
+- Don't use Math.log2 since IE doesn't support it.
 
 ## 2.0.3
 
