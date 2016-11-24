@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 2.0.4dev
+## 2.0.4
 
 - French localization.
 - Don't use Math.log2 since IE doesn't support it.
