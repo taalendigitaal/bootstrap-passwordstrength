@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.5
+
+- Italian localization.
+
 ## 2.0.4
 
 - French localization.
