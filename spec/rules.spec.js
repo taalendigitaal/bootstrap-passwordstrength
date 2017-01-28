@@ -59,7 +59,7 @@ var jsdom = require('jsdom').jsdom,
     relaxedOptions,
     $;
 
-$ = jQuery(jsdom().parentWindow);
+$ = jQuery(jsdom().defaultView);
 
 strictOptions = $.extend(true, {}, options);
 strictOptions.rules.activated.wordTwoCharacterClasses = true;

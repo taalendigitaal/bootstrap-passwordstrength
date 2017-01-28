@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.6dev
+
+- Bootstrap 4 alpha 6 support.
+
 ## 2.0.5
 
 - Italian localization.
