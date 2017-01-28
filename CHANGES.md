@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 2.0.6dev
+## 2.0.6
 
 - Updated development dependencies.
 - Bootstrap 4 alpha 6 support.
