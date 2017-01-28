@@ -2,6 +2,7 @@
 
 ## 2.0.6dev
 
+- Updated development dependencies.
 - Bootstrap 4 alpha 6 support.
 
 ## 2.0.5
