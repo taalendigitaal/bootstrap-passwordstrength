@@ -280,6 +280,7 @@ defaultOptions.ui.colorClasses = [
     "danger", "danger", "danger", "warning", "warning", "success"
 ];
 defaultOptions.ui.showProgressBar = true;
+defaultOptions.ui.progressExtraCssClasses = '';
 defaultOptions.ui.progressBarEmptyPercentage = 1;
 defaultOptions.ui.progressBarMinPercentage = 1;
 defaultOptions.ui.progressBarExtraCssClasses = '';
@@ -391,7 +392,7 @@ var ui = {};
                 "'><div class='";
         } else {
             // Bootstrap 3 & 4
-            progressbar += "'><div class='" +
+            progressbar += options.ui.progressExtraCssClasses + "'><div class='" +
                 options.ui.progressBarExtraCssClasses + " progress-";
         }
         progressbar += "bar'>";
