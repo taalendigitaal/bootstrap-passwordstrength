@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2.0.7
+
+- Add new option `progressExtraCssClasses` to be able to customize the
+  container of the progress bar.
+- Updated development dependencies.
+
 ## 2.0.6
 
 - Updated development dependencies.
