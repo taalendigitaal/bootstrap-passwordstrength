@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 2.0.8dev
+## 2.0.8
 
 - Fix showing the strength of the password through the status of the field.
 
