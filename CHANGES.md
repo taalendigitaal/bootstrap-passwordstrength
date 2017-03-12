@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.8dev
+
+- Fix showing the strength of the password through the status of the field.
+
 ## 2.0.7
 
 - Add new option `progressExtraCssClasses` to be able to customize the
