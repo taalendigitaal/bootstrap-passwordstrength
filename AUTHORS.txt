@@ -32,3 +32,4 @@ mindcreations <https://github.com/mindcreations>
 Cal West <https://github.com/Allerion>
 Grégory Pelletey <gregory.pelletey@gmail.com>
 pages-solutions <https://github.com/pages-solutions>
+fuzzfree <https://github.com/fuzzfree>
