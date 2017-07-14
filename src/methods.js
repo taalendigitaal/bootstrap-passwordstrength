@@ -24,7 +24,9 @@ var methods = {};
             verdictLevel,
             score;
 
-        if (options === undefined) { return; }
+        if (options === undefined) {
+            return;
+        }
 
         options.instances.errors = [];
         if (word.length === 0) {
@@ -48,7 +50,9 @@ var methods = {};
         verdictLevel = verdictText[1];
         verdictText = verdictText[0];
 
-        if (options.common.debug) { console.log(score + ' - ' + verdictText); }
+        if (options.common.debug) {
+            console.log(score + ' - ' + verdictText);
+        }
 
         if ($.isFunction(options.common.onKeyUp)) {
             options.common.onKeyUp(event, {
@@ -69,7 +73,7 @@ var methods = {};
             callback;
 
         callback = function () {
-            var newWord =  $el.val();
+            var newWord = $el.val();
 
             if (newWord !== word) {
                 onKeyUp(event);
@@ -150,6 +154,26 @@ var methods = {};
 
     methods.ruleActive = function (rule, active) {
         applyToAll.call(this, rule, "activated", active);
+    };
+
+    methods.ruleIsMet = function (rule) {
+        if ($.isFunction(rulesEngine.validation[rule])) {
+            if (rule === "wordLength") {
+                rule = "wordLengthStaticScore";
+            }
+
+            var rulesMetCnt = 0;
+
+            this.each(function (idx, el) {
+                var options = $(el).data("pwstrength-bootstrap");
+
+                rulesMetCnt += rulesEngine.validation[rule](options, $(el).val(), 1);
+            });
+
+            return (rulesMetCnt === this.length);
+        }
+
+        $.error("Rule " + rule + " does not exist on jQuery.pwstrength-bootstrap.validation");
     };
 
     $.fn.pwstrength = function (method) {
