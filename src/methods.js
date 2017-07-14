@@ -24,7 +24,7 @@ var methods = {};
             verdictLevel,
             score;
 
-        if (typeof(options) === "undefined") {
+        if (options === undefined) {
             return;
         }
 
@@ -171,9 +171,9 @@ var methods = {};
             });
 
             return (rulesMetCnt === this.length);
-        } else {
-            $.error("Rule " + rule + " does not exist on jQuery.pwstrength-bootstrap.validation");
         }
+
+        $.error("Rule " + rule + " does not exist on jQuery.pwstrength-bootstrap.validation");
     };
 
     $.fn.pwstrength = function (method) {
