@@ -1,8 +1,10 @@
 # CHANGELOG
 
-## 2.0.9dev
+## 2.1.0dev
 
 - Slovak translation.
+- Add a new `ruleIsMet` method that returns a boolean value indicating if all
+  password inputs in the page pass a specific rule.
 
 ## 2.0.8
 

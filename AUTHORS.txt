@@ -33,3 +33,4 @@ Cal West <https://github.com/Allerion>
 Grégory Pelletey <gregory.pelletey@gmail.com>
 pages-solutions <https://github.com/pages-solutions>
 fuzzfree <https://github.com/fuzzfree>
+Roland Häder <https://github.com/Quix0r>

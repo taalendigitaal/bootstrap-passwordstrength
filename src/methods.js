@@ -24,9 +24,7 @@ var methods = {};
             verdictLevel,
             score;
 
-        if (options === undefined) {
-            return;
-        }
+        if (options === undefined) { return; }
 
         options.instances.errors = [];
         if (word.length === 0) {
