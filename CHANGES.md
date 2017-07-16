@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 2.1.0dev
+## 2.1.0
 
 - Slovak translation.
 - Add a new `ruleIsMet` method that returns a boolean value indicating if all
