@@ -122,8 +122,8 @@ Let's see the options of each section.
   {
     wordNotEmail: -100,
     wordMinLength: -50,
-	wordMaxLength: -50,
-	wordInvalidChar: -100,
+    wordMaxLength: -50,
+    wordInvalidChar: -100,
     wordSimilarToUsername: -100,
     wordSequences: -50,
     wordTwoCharacterClasses: 2,
@@ -151,8 +151,8 @@ Let's see the options of each section.
   {
     wordNotEmail: true,
     wordMinLength: true,
-	wordMaxLength: false,
-	wordInvalidChar: true,
+    wordMaxLength: false,
+    wordInvalidChar: true,
     wordSimilarToUsername: true,
     wordSequences: true,
     wordTwoCharacterClasses: false,
