@@ -1,5 +1,7 @@
 {
-    "wordLength": "Sua senha é muito curta",
+    "wordMinLength": "Sua senha é muito curta",
+    "wordMaxLength": "Sua senha é muito longa",
+    "wordInvalidChar": "Sua senha contém um caractere inválido",
     "wordNotEmail": "Não use seu e-mail como senha",
     "wordSimilarToUsername": "Sua senha não pode conter o seu nome de usuário",
     "wordTwoCharacterClasses": "Use diferentes classes de caracteres",

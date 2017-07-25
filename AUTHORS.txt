@@ -1,4 +1,4 @@
-Authors ordered by first contribution.
+﻿Authors ordered by first contribution.
 
 Tane Piper <piper.tane@gmail.com>
 Alejandro Blanco <alejandro.b.e@gmail.com>
@@ -34,3 +34,4 @@ Grégory Pelletey <gregory.pelletey@gmail.com>
 pages-solutions <https://github.com/pages-solutions>
 fuzzfree <https://github.com/fuzzfree>
 Roland Häder <https://github.com/Quix0r>
+Tzipora Ziegler <https://github.com/tziporaziegler>

@@ -13,6 +13,7 @@ var defaultOptions = {};
 
 defaultOptions.common = {};
 defaultOptions.common.minChar = 6;
+defaultOptions.common.maxChar = 20;
 defaultOptions.common.usernameField = "#username";
 defaultOptions.common.userInputs = [
     // Selectors for input fields with user input
@@ -31,7 +32,9 @@ defaultOptions.rules = {};
 defaultOptions.rules.extra = {};
 defaultOptions.rules.scores = {
     wordNotEmail: -100,
-    wordLength: -50,
+    wordMinLength: -50,
+    wordMaxLength: -50,
+    wordInvalidChar: -100,
     wordSimilarToUsername: -100,
     wordSequences: -20,
     wordTwoCharacterClasses: 2,
@@ -48,7 +51,9 @@ defaultOptions.rules.scores = {
 };
 defaultOptions.rules.activated = {
     wordNotEmail: true,
-    wordLength: true,
+    wordMinLength: true,
+    wordMaxLength: false,
+    wordInvalidChar: true,
     wordSimilarToUsername: true,
     wordSequences: true,
     wordTwoCharacterClasses: false,

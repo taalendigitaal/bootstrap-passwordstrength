@@ -35,7 +35,7 @@ try {
         return 0;
     };
 
-    validation.wordLength = function (options, word, score) {
+    validation.wordMinLength = function (options, word, score) {
         var wordlen = word.length,
             lenScore = Math.pow(wordlen, options.rules.raisePower);
         if (wordlen < options.common.minChar) {
@@ -43,6 +43,22 @@ try {
         }
         return lenScore;
     };
+
+    validation.wordMaxLength = function (options, word, score) {
+        var wordlen = word.length,
+            lenScore = Math.pow(wordlen, options.rules.raisePower);
+        if (wordlen > options.common.maxChar) {
+            return score;
+        }
+        return lenScore;
+    };
+
+    validation.wordInvalidChar = function (options, word, score) {
+        if (word.match(/[\s,',"]/)) {
+            return score;
+        }
+        return 0;
+    },
 
     validation.wordSimilarToUsername = function (options, word, score) {
         var username = $(options.common.usernameField).val();
