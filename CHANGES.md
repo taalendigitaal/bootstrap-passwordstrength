@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 2.1.1dev
+## 2.1.1
 
 - Add missing rule, needed by the `ruleIsMet` method.
 - Add `wordMaxLength` and `wordInvalidChar` optional rules to the engine.

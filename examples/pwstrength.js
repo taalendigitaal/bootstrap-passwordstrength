@@ -1,6 +1,6 @@
 /*!
 * jQuery Password Strength plugin for Twitter Bootstrap
-* Version: 2.0.8
+* Version: 2.1.1
 *
 * Copyright (c) 2008-2013 Tane Piper
 * Copyright (c) 2013 Alejandro Blanco
@@ -19,7 +19,9 @@ var i18n = {};
     'use strict';
 
     i18n.fallback = {
-        "wordLength": "Your password is too short",
+        "wordMinLength": "Your password is too short",
+        "wordMaxLength": "Your password is too long",
+        "wordInvalidChar": "Your password contains an invalid character",
         "wordNotEmail": "Do not use your email as your password",
         "wordSimilarToUsername": "Your password cannot contain your username",
         "wordTwoCharacterClasses": "Use different character classes",
@@ -80,13 +82,33 @@ try {
         return 0;
     };
 
-    validation.wordLength = function (options, word, score) {
+    validation.wordMinLength = function (options, word, score) {
         var wordlen = word.length,
             lenScore = Math.pow(wordlen, options.rules.raisePower);
         if (wordlen < options.common.minChar) {
             lenScore = (lenScore + score);
         }
         return lenScore;
+    };
+
+    validation.wordMaxLength = function (options, word, score) {
+        var wordlen = word.length,
+            lenScore = Math.pow(wordlen, options.rules.raisePower);
+        if (wordlen > options.common.maxChar) {
+            return score;
+        }
+        return lenScore;
+    };
+
+    validation.wordInvalidChar = function (options, word, score) {
+        if (word.match(/[\s,',"]/)) {
+            return score;
+        }
+        return 0;
+    };
+
+    validation.wordLengthStaticScore = function (options, word, score) {
+        return word.length < options.common.minChar ? 0 : score;
     };
 
     validation.wordSimilarToUsername = function (options, word, score) {
@@ -221,6 +243,7 @@ var defaultOptions = {};
 
 defaultOptions.common = {};
 defaultOptions.common.minChar = 6;
+defaultOptions.common.maxChar = 20;
 defaultOptions.common.usernameField = "#username";
 defaultOptions.common.userInputs = [
     // Selectors for input fields with user input
@@ -239,7 +262,9 @@ defaultOptions.rules = {};
 defaultOptions.rules.extra = {};
 defaultOptions.rules.scores = {
     wordNotEmail: -100,
-    wordLength: -50,
+    wordMinLength: -50,
+    wordMaxLength: -50,
+    wordInvalidChar: -100,
     wordSimilarToUsername: -100,
     wordSequences: -20,
     wordTwoCharacterClasses: 2,
@@ -256,7 +281,9 @@ defaultOptions.rules.scores = {
 };
 defaultOptions.rules.activated = {
     wordNotEmail: true,
-    wordLength: true,
+    wordMinLength: true,
+    wordMaxLength: false,
+    wordInvalidChar: false,
     wordSimilarToUsername: true,
     wordSequences: true,
     wordTwoCharacterClasses: false,
@@ -684,7 +711,9 @@ var methods = {};
         verdictLevel = verdictText[1];
         verdictText = verdictText[0];
 
-        if (options.common.debug) { console.log(score + ' - ' + verdictText); }
+        if (options.common.debug) {
+            console.log(score + ' - ' + verdictText);
+        }
 
         if ($.isFunction(options.common.onKeyUp)) {
             options.common.onKeyUp(event, {
@@ -705,7 +734,7 @@ var methods = {};
             callback;
 
         callback = function () {
-            var newWord =  $el.val();
+            var newWord = $el.val();
 
             if (newWord !== word) {
                 onKeyUp(event);
@@ -786,6 +815,26 @@ var methods = {};
 
     methods.ruleActive = function (rule, active) {
         applyToAll.call(this, rule, "activated", active);
+    };
+
+    methods.ruleIsMet = function (rule) {
+        if ($.isFunction(rulesEngine.validation[rule])) {
+            if (rule === "wordLength") {
+                rule = "wordLengthStaticScore";
+            }
+
+            var rulesMetCnt = 0;
+
+            this.each(function (idx, el) {
+                var options = $(el).data("pwstrength-bootstrap");
+
+                rulesMetCnt += rulesEngine.validation[rule](options, $(el).val(), 1);
+            });
+
+            return (rulesMetCnt === this.length);
+        }
+
+        $.error("Rule " + rule + " does not exist on jQuery.pwstrength-bootstrap.validation");
     };
 
     $.fn.pwstrength = function (method) {
