@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2.1.1dev
+
+- Add missing rule, needed by the `ruleIsMet` method.
+- Add `wordMaxLength` and `wordInvalidChar` optional rules to the engine.
+
 ## 2.1.0
 
 - Slovak translation.
