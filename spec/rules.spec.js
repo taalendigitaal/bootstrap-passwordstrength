@@ -16,7 +16,7 @@ var jsdom = require('jsdom').jsdom,
                 wordNotEmail: true,
                 wordMinLength: true,
                 wordMaxLength: false,
-                wordInvalidChar: true,
+                wordInvalidChar: false,
                 wordSimilarToUsername: true,
                 wordSequences: true,
                 wordTwoCharacterClasses: false,
@@ -71,7 +71,7 @@ strictOptions.rules.activated.wordRepetitions = true;
 
 relaxedOptions = $.extend(true, {}, options);
 relaxedOptions.rules.activated.wordNotEmail = false;
-relaxedOptions.rules.activated.wordLength = false;
+relaxedOptions.rules.activated.wordMinLength = false;
 relaxedOptions.rules.activated.wordSequences = false;
 
 describe('Applying default rules', function () {

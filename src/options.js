@@ -53,7 +53,7 @@ defaultOptions.rules.activated = {
     wordNotEmail: true,
     wordMinLength: true,
     wordMaxLength: false,
-    wordInvalidChar: true,
+    wordInvalidChar: false,
     wordSimilarToUsername: true,
     wordSequences: true,
     wordTwoCharacterClasses: false,

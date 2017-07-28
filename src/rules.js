@@ -58,7 +58,7 @@ try {
             return score;
         }
         return 0;
-    },
+    };
 
     validation.wordLengthStaticScore = function (options, word, score) {
         return word.length < options.common.minChar ? 0 : score;
