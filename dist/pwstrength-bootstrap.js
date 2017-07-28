@@ -19,7 +19,9 @@ var i18n = {};
     'use strict';
 
     i18n.fallback = {
-        "wordLength": "Your password is too short",
+        "wordMinLength": "Your password is too short",
+        "wordMaxLength": "Your password is too long",
+        "wordInvalidChar": "Your password contains an invalid character",
         "wordNotEmail": "Do not use your email as your password",
         "wordSimilarToUsername": "Your password cannot contain your username",
         "wordTwoCharacterClasses": "Use different character classes",
@@ -80,7 +82,7 @@ try {
         return 0;
     };
 
-    validation.wordLength = function (options, word, score) {
+    validation.wordMinLength = function (options, word, score) {
         var wordlen = word.length,
             lenScore = Math.pow(wordlen, options.rules.raisePower);
         if (wordlen < options.common.minChar) {
@@ -88,6 +90,22 @@ try {
         }
         return lenScore;
     };
+
+    validation.wordMaxLength = function (options, word, score) {
+        var wordlen = word.length,
+            lenScore = Math.pow(wordlen, options.rules.raisePower);
+        if (wordlen > options.common.maxChar) {
+            return score;
+        }
+        return lenScore;
+    };
+
+    validation.wordInvalidChar = function (options, word, score) {
+        if (word.match(/[\s,',"]/)) {
+            return score;
+        }
+        return 0;
+    },
 
     validation.wordSimilarToUsername = function (options, word, score) {
         var username = $(options.common.usernameField).val();
@@ -221,6 +239,7 @@ var defaultOptions = {};
 
 defaultOptions.common = {};
 defaultOptions.common.minChar = 6;
+defaultOptions.common.maxChar = 20;
 defaultOptions.common.usernameField = "#username";
 defaultOptions.common.userInputs = [
     // Selectors for input fields with user input
@@ -239,7 +258,9 @@ defaultOptions.rules = {};
 defaultOptions.rules.extra = {};
 defaultOptions.rules.scores = {
     wordNotEmail: -100,
-    wordLength: -50,
+    wordMinLength: -50,
+    wordMaxLength: -50,
+    wordInvalidChar: -100,
     wordSimilarToUsername: -100,
     wordSequences: -20,
     wordTwoCharacterClasses: 2,
@@ -256,7 +277,9 @@ defaultOptions.rules.scores = {
 };
 defaultOptions.rules.activated = {
     wordNotEmail: true,
-    wordLength: true,
+    wordMinLength: true,
+    wordMaxLength: false,
+    wordInvalidChar: true,
     wordSimilarToUsername: true,
     wordSequences: true,
     wordTwoCharacterClasses: false,

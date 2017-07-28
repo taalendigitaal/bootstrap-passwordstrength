@@ -21,6 +21,12 @@ Let's see the options of each section.
   Sets the minimum required of characters for a password to not be considered
   too weak.
 
+* __maxChar__:
+
+  Default: `20` (Integer)
+
+  Sets the maximum allowed characters for a password.
+
 * __usernameField__:
 
   Default: `"#username"` (String)
@@ -115,7 +121,9 @@ Let's see the options of each section.
   ```
   {
     wordNotEmail: -100,
-    wordLength: -50,
+    wordMinLength: -50,
+    wordMaxLength: -50,
+    wordInvalidChar: -100,
     wordSimilarToUsername: -100,
     wordSequences: -50,
     wordTwoCharacterClasses: 2,
@@ -142,7 +150,9 @@ Let's see the options of each section.
   ```
   {
     wordNotEmail: true,
-    wordLength: true,
+    wordMinLength: true,
+    wordMaxLength: false,
+    wordInvalidChar: true,
     wordSimilarToUsername: true,
     wordSequences: true,
     wordTwoCharacterClasses: false,
