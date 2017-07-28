@@ -24,7 +24,7 @@
         "test": "grunt test"
     },
     "dependencies": {
-        "jquery": ">=1.7.0",
+        "jquery": ">=3.0.0",
         "bootstrap": ">=2.0.0"
     },
     "devDependencies": {
@@ -32,9 +32,9 @@
         "grunt-jslint": "1.1.14",
         "grunt-shell": "~2.1.0",
         "grunt-contrib-concat": "~1.0.1",
-        "grunt-contrib-uglify": "~2.1.0",
+        "grunt-contrib-uglify": "~3.0.x",
         "grunt-jasmine-node": "~0.3.1",
-        "jquery": "~3.1.1",
+        "jquery": "3.2.x",
         "jsdom": "~9.11.0"
     }
 }
