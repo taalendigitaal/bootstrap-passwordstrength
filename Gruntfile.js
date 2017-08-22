@@ -7,6 +7,7 @@ module.exports = function (grunt) {
     var license =
         '/*!\n' +
         '* jQuery Password Strength plugin for Twitter Bootstrap\n' +
+        '* Version: <%= pkg.version %>\n' +
         '*\n' +
         '* Copyright (c) 2008-2013 Tane Piper\n' +
         '* Copyright (c) 2013 Alejandro Blanco\n' +
@@ -14,10 +15,9 @@ module.exports = function (grunt) {
         '*/\n\n' +
         '(function (jQuery) {\n';
 
-    // Project configuration
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        jslint: { // configure the task
+        jslint: {
             client: {
                 src: [
                     'src/*js', 'spec/*js', 'Gruntfile.js'
@@ -29,6 +29,15 @@ module.exports = function (grunt) {
                     ]
                 }
             }
+        },
+        jasmine_node: {
+            options: {
+                forceExit: true,
+                jUnit: {
+                    report: false
+                }
+            },
+            all: ['spec/']
         },
         concat: {
             options: {
@@ -43,20 +52,21 @@ module.exports = function (grunt) {
             },
             dist: {
                 src: [
-                    'src/rules.js', 'src/options.js', 'src/ui.js',
-                    'src/methods.js'
+                    'src/i18n.js', 'src/rules.js', 'src/options.js',
+                    'src/ui.js', 'src/methods.js'
                 ],
-                dest: '<%= pkg.name %>-<%= pkg.version %>.js'
+                dest: '<%= pkg.name %>.js'
             }
         },
         uglify: {
             options: {
                 banner: '/* <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> - GPLv3 & MIT License */\n',
-                sourceMap: '<%= pkg.name %>-<%= pkg.version %>.min.map'
+                sourceMap: true,
+                sourceMapName: '<%= pkg.name %>.min.map'
             },
             dist: {
                 files: {
-                    '<%= pkg.name %>-<%= pkg.version %>.min.js': [
+                    '<%= pkg.name %>.min.js': [
                         '<%= concat.dist.dest %>'
                     ]
                 }
@@ -66,11 +76,17 @@ module.exports = function (grunt) {
             copyFile: {
                 command: 'cp <%= concat.dist.dest %> examples/pwstrength.js'
             },
+            copyZxcvbn: {
+                command: 'cp bower_components/zxcvbn/dist/zxcvbn.js examples/zxcvbn.js'
+            },
+            copyI18next: {
+                command: 'cp bower_components/i18next/i18next.min.js examples/i18next.js'
+            },
             makeDir: {
                 command: 'mkdir -p dist'
             },
             moveFiles: {
-                command: 'mv <%= pkg.name %>-<%= pkg.version %>* dist/'
+                command: 'mv <%= pkg.name %>* dist/'
             }
         }
     });

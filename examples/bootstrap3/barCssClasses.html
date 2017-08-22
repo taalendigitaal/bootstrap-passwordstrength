@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Bootstrap 3 Password Strength Meter Example</title>
+    <title>Bootstrap 3 Password Strength Meter Example - Extra Css Classes for the Progress Bar</title>
     <link rel="stylesheet" media="screen" href="bootstrap3.css" />
 </head>
 <body>
     <div class="container">
-        <h1>Bootstrap 3 Password Strength Meter Example</h1>
+        <h1>Bootstrap 3 Password Strength Meter Example - Extra Css Classes for the Progress Bar</h1>
         <form role="form" style="margin-bottom: 20px;">
             <div class="row" id="pwd-container">
                 <div class="col-sm-4">
@@ -33,7 +33,8 @@
         showVerdictsInsideProgressBar: true,
         viewports: {
             progress: ".pwstrength_viewport_progress"
-        }
+        },
+        progressBarExtraCssClasses: "progress-bar-striped active"
     };
     options.common = {
         debug: true,
@@ -59,7 +60,8 @@
                 showVerdictsInsideProgressBar: true,
                 viewports: {
                     progress: ".pwstrength_viewport_progress"
-                }
+                },
+                progressBarExtraCssClasses: "progress-bar-striped active"
             };
             options.common = {
                 debug: true,

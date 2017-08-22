@@ -19,6 +19,26 @@
                 </div>
             </div>
         </form>
+        <div class="row">
+            <div class="col-sm-12">
+<pre>jQuery(document).ready(function () {
+    "use strict";
+    var options = {};
+    options.ui = {
+        showPopover: true,
+        showErrors: true,
+        showProgressBar: false
+    };
+    options.rules = {
+        activated: {
+            wordTwoCharacterClasses: true,
+            wordRepetitions: true
+        }
+    };
+    $(':password').pwstrength(options);
+});</pre>
+            </div>
+        </div>
         <p><a href="..">Go back</a></p>
     </div>
 
@@ -31,7 +51,8 @@
             var options = {};
             options.ui = {
                 showPopover: true,
-                showErrors: true
+                showErrors: true,
+                showProgressBar: false
             };
             options.rules = {
                 activated: {

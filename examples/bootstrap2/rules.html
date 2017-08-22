@@ -17,6 +17,27 @@
         <p>The words "password", "3141592" and "yeah" have been blocked by the
         custom rules. So if the password contains one of the blocked words,
         then the password will be marked as weak.</p>
+        <div class="row">
+            <div class="span12">
+<pre>jQuery(document).ready(function () {
+    "use strict";
+    var options = { ui: { bootstrap2: true } },
+        $password = $(':password').pwstrength(options),
+        common_words = ["password", "3141592", "yeah"];
+
+    $password.pwstrength("addRule", "commonWords", function (options, word, score) {
+        var result = false;
+        $.each(common_words, function (i, item) {
+            var re = new RegExp(item, "gi");
+            if (word.match(re)) {
+                result = score;
+            }
+        });
+        return result;
+    }, -100, true);
+});</pre>
+            </div>
+        </div>
         <p><a href="..">Go back</a></p>
     </div>
 

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Bootstrap 3 Password Strength Meter Example</title>
+    <title>Bootstrap 3 Password Strength Meter Example - Status</title>
     <link rel="stylesheet" media="screen" href="bootstrap3.css" />
 </head>
 <body>
     <div class="container">
-        <h1>Bootstrap 3 Password Strength Meter Example</h1>
+        <h1>Bootstrap 3 Password Strength Meter Example - Status</h1>
         <form role="form" style="margin-bottom: 20px;">
             <div class="row" id="pwd-container">
                 <div class="col-sm-4">
@@ -14,13 +14,8 @@
                         <label for="password">Password</label>
                         <input type="password" class="form-control" id="password" placeholder="Password">
                     </div>
+                    <span class="pwstrength_viewport_verdict"></span>
                 </div>
-                <div class="col-sm-6 col-sm-offset-2" style="padding-top: 30px;">
-                    <div class="pwstrength_viewport_progress"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div id="messages" class="col-sm-12"></div>
             </div>
         </form>
         <div class="row">
@@ -30,15 +25,10 @@
     var options = {};
     options.ui = {
         container: "#pwd-container",
-        showVerdictsInsideProgressBar: true,
+        showStatus: true,
+        showProgressBar: false,
         viewports: {
-            progress: ".pwstrength_viewport_progress"
-        }
-    };
-    options.common = {
-        debug: true,
-        onLoad: function () {
-            $('#messages').text('Start typing password');
+            verdict: ".pwstrength_viewport_verdict"
         }
     };
     $(':password').pwstrength(options);
@@ -56,15 +46,10 @@
             var options = {};
             options.ui = {
                 container: "#pwd-container",
-                showVerdictsInsideProgressBar: true,
+                showStatus: true,
+                showProgressBar: false,
                 viewports: {
-                    progress: ".pwstrength_viewport_progress"
-                }
-            };
-            options.common = {
-                debug: true,
-                onLoad: function () {
-                    $('#messages').text('Start typing password');
+                    verdict: ".pwstrength_viewport_verdict"
                 }
             };
             $(':password').pwstrength(options);

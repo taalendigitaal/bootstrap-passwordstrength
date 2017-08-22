@@ -1,30 +1,40 @@
 {
     "name": "pwstrength-bootstrap",
-    "version": "1.0.2",
+    "version": "2.1.1",
+    "description": "jQuery plugin for Twitter Bootstrap that provides rulesets for visualy displaying the quality of a users typed in password.",
     "author": "Alejandro Blanco <alejandro.b.e@gmail.com>",
+    "homepage": "https://github.com/ablanco/jquery.pwstrength.bootstrap",
+    "bugs": {
+        "url": "https://github.com/ablanco/jquery.pwstrength.bootstrap/issues"
+    },
+    "keywords": [
+        "bootstrap",
+        "password",
+        "strength",
+        "meter",
+        "jquery-plugin",
+        "ecosystem:jquery"
+    ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/ablanco/jquery.pwstrength.bootstrap"
+        "url": "https://github.com/ablanco/jquery.pwstrength.bootstrap.git"
     },
-    "licenses" : [
-        {
-            "type" : "GPL v3",
-            "url" : "https://raw.github.com/ablanco/jquery.pwstrength.bootstrap/master/GPL-LICENSE.txt"
-        }, {
-            "type": "MIT",
-            "url": "https://raw.github.com/ablanco/jquery.pwstrength.bootstrap/master/MIT-LICENSE.txt"
-        }
-    ],
+    "license": "(GPL-3.0 OR MIT)",
     "scripts": {
         "test": "grunt test"
     },
+    "dependencies": {
+        "jquery": ">=3.0.0",
+        "bootstrap": ">=2.0.0"
+    },
     "devDependencies": {
-        "grunt": "~0.4.2",
-        "grunt-jslint": "~1.1.2",
-        "grunt-shell": "~0.6.1",
-        "grunt-contrib-concat": "~0.3.0",
-        "grunt-contrib-uglify": "~0.2.2",
-        "grunt-jasmine-node": "~0.1.0",
-        "jquery": "~1.8.3"
+        "grunt": "~1.0.1",
+        "grunt-jslint": "1.1.14",
+        "grunt-shell": "~2.1.0",
+        "grunt-contrib-concat": "~1.0.1",
+        "grunt-contrib-uglify": "~3.0.x",
+        "grunt-jasmine-node": "~0.3.1",
+        "jquery": "3.2.x",
+        "jsdom": "~9.11.0"
     }
 }
